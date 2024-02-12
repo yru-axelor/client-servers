@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    outline: none;
+}
+
+.container:hover {
+    outline: 4px;
+    border-color: #646cff;
+}
+
+.left,
+.right {
+    width: 50%;
+}
+
+.img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
