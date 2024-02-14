@@ -10,6 +10,7 @@ function App() {
 
   const handleFetchData = async () => {
     try {
+      setLoading(true)
       const res = await fetch("http://localhost:5000/api/contacts");
       const data = await res.json();
       setUsers(data);
@@ -21,9 +22,12 @@ function App() {
   }
 
   const handleFetchAxios = () => {
+    setLoading(true);
     axios.get("http://localhost:5000/api/contacts").then((response) => {
       setUsers(response.data);
-    }).catch((error) => setError(error.message));
+    }).catch((error) => setError(error.message)).finally(() => {
+      setLoading(false);
+    })
   };
 
   const clearData = () => {
